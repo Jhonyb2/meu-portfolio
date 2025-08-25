@@ -1,0 +1,50 @@
+/*
+    Estilos globais para a página
+*/
+body, html {
+    height: 100%;
+    
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/*
+    Estilos para a seção de boas-vindas ('hero-section')
+*/
+.hero-section {
+    height: 100vh;
+    color: white; 
+
+    /* Define a imagem de fundo */
+    background-image: url('../img/background.jpg'); 
+    background-size: cover;
+    background-position: center center;
+
+    /* Adiciona a sobreposição semi-transparente para o texto se destacar */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/background.jpg');
+}
+
+.hero-section h1 {
+    font-size: 4rem;
+    font-weight: 700;
+}
+
+.hero-section p {
+    font-size: 1.5rem;
+}
+
+/*
+    Estilos para o rodapé
+    Remove a posição fixa para que ele apareça abaixo do conteúdo
+*/
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background: #333;
+    color: #fff;
+    width: 100%;
+}
