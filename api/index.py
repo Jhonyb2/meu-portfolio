@@ -49,7 +49,3 @@ def contato():
     # As rotas para o email e whatsapp não precisam de processamento de formulário.
     # Apenas a página de contato com formulário precisaria dessa lógica.
     return render_template('contato.html')
-
-# Executa o servidor de desenvolvimento
-if __name__ == '__main__':
-    app.run(debug=True)
