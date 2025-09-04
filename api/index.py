@@ -34,3 +34,4 @@ def home():
     # Passa a lista de projetos para o template principal
     return render_template('index.html', projetos=meus_projetos)
 
+# Nota: As outras rotas não são mais necessárias e podem ser removidas.
