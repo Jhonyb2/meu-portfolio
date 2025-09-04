@@ -1,10 +1,9 @@
 from flask import Flask, render_template, request
 import os
 
-# Cria uma instância do aplicativo Flask
 app = Flask(__name__)
 
-# Armazene seus projetos em uma lista de dicionários
+# A lista de projetos precisa estar aqui, no topo do arquivo
 meus_projetos = [
     {
         'titulo': 'Biblioteca em C', 
@@ -29,8 +28,8 @@ meus_projetos = [
     }
 ]
 
-# Página inicial
+# AQUI ESTÁ A CORREÇÃO
 @app.route('/')
 def home():
-    # Agora a variável 'meus_projetos' está definida e acessível
+    # Agora a variável 'projetos' está sendo enviada para o template
     return render_template('index.html', projetos=meus_projetos)
