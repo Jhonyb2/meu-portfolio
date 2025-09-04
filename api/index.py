@@ -1,14 +1,10 @@
 from flask import Flask, render_template, request
 import os
 
-# Define o caminho para as pastas templates e static
-template_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'templates')
-static_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static')
+# Cria uma instância do aplicativo Flask
+app = Flask(__name__)
 
-# Cria a instância do aplicativo Flask
-app = Flask(__name__, template_folder=template_dir, static_folder=static_dir)
-
-# --- Garanta que esta parte esteja aqui, no topo do arquivo ---
+# Armazene seus projetos em uma lista de dicionários
 meus_projetos = [
     {
         'titulo': 'Biblioteca em C', 
@@ -32,7 +28,6 @@ meus_projetos = [
         'link_projeto': 'https://github.com/seu-usuario/meu-portfolio'
     }
 ]
-# -----------------------------------------------------------------
 
 # Página inicial
 @app.route('/')
