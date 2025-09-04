@@ -3,13 +3,96 @@
 {% block titulo %}Início{% endblock %}
 
 {% block conteudo %}
-    <section class="hero-section text-white text-center d-flex flex-column justify-content-center align-items-center">
+    <section id="inicio" class="hero-section text-white text-center d-flex flex-column justify-content-center align-items-center">
         <div class="container">
             <h1 class="display-1 fw-bold mb-3 animate__animated animate__fadeInUp">Bem-Vindo</h1>
             <p class="lead mb-4 animate__animated animate__fadeInUp animate__delay-1s">
                 Me chamo Jhonaton, e sou um desenvolvedor com base em Python com habilidades em Flask apaixonado por tecnologia.
             </p>
-            <a href="{{ url_for('projetos') }}" class="btn btn-primary btn-lg mt-3 animate__animated animate__fadeInUp animate__delay-2s">Ver Meus Projetos</a>
+            <a href="#projetos" class="btn btn-primary btn-lg mt-3 animate__animated animate__fadeInUp animate__delay-2s">Ver Meus Projetos</a>
+        </div>
+    </section>
+
+    <section id="projetos" class="container my-5">
+        <h1 class="mb-4">Meus Projetos</h1>
+    
+        <div class="row">
+            {% for projeto in projetos %}
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100">
+                    <img src="{{ url_for('static', filename='img/' + projeto.imagem) }}" class="card-img-top" alt="Imagem do Projeto {{ projeto.titulo }}">
+                    
+                    <div class="card-body">
+                        <h5 class="card-title">{{ projeto.titulo }}</h5>
+                        <p class="card-text">{{ projeto.descricao }}</p>
+                        <span class="badge bg-primary">{{ projeto.linguagem }}</span>
+                    </div>
+
+                    <div class="card-footer text-center">
+                        <a href="{{ projeto.link_projeto }}" class="btn btn-dark" target="_blank">
+                            Ver no GitHub <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section id="sobre" class="container my-5">
+        <div class="row align-items-center">
+            <div class="col-md-4 text-center mb-4">
+                <img src="{{ url_for('static', filename='img/meu-perfil.png') }}" class="img-fluid rounded-circle shadow-sm" alt="Foto de Perfil">
+            </div>
+
+            <div class="col-md-8">
+                <h1 class="display-4 mb-3">Olá, me chamo Jhonaton Salgueiro</h1>
+                <p class="lead">
+                   <p> Sou um desenvolvedor Front-End com um forte interesse em me tornar Full-Stack. Minha curiosidade e paixão me impulsionam a criar experiências digitais marcantes.</p>
+
+                   <p>Acredito que, do conceito criativo à interface final, cada linha de código conecta a um futuro de inovação. Gosto de unir tecnologia, ideias e negócios para gerar soluções de valor real.</p>
+
+                   <p>Atualmente, estou em busca da minha primeira oportunidade na área de tecnologia, com o objetivo de contribuir para projetos com impacto e significado positivo.</p>                
+                </p>
+                
+                <hr class="my-4">
+
+                <div class="d-flex flex-wrap gap-2">
+                    <h5>Habilidades Técnicas:</h5>
+                    <span class="badge bg-secondary p-2 me-1">C</span>
+                    <span class="badge bg-secondary p-2 me-1">Python</span>
+                    <span class="badge bg-secondary p-2 me-1">Flask</span>
+                    <span class="badge bg-secondary p-2 me-1">HTML</span>
+                    <span class="badge bg-secondary p-2 me-1">CSS</span>
+                    <span class="badge bg-secondary p-2 me-1">Estrutura de Dados</span>
+                    <span class="badge bg-secondary p-2 me-1">Git / GitHub</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="container my-5 text-center">
+        <h1 class="display-4 fw-bold mb-4">Entre em Contato</h1>
+        <p class="lead mb-5">
+            Estou disponível para novos projetos, colaborações e oportunidades.
+            Entre em contato comigo através dos canais abaixo:
+        </p>
+
+        <div class="row justify-content-center">
+            
+            <div class="col-md-6 col-lg-4 mb-4">
+                <a href="https://wa.me/5579999645678" class="btn btn-success btn-lg w-100" target="_blank">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+                <p class="mt-2">Número para contato 👆🏼</p>
+            </div>
+
+            <div class="col-md-6 col-lg-4 mb-4">
+                <a href="mailto:jhonaton.s.barreto@gmail.com" class="btn btn-primary btn-lg w-100" target="_blank">
+                    <i class="fas fa-envelope"></i> E-mail
+                </a>
+                <p class="mt-2">Meu Gmail👆🏼</p>
+            </div>
         </div>
     </section>
 {% endblock %}

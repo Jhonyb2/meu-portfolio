@@ -31,21 +31,6 @@ meus_projetos = [
 # Página inicial
 @app.route('/')
 def home():
-    return render_template('index.html')
+    # Passa a lista de projetos para o template principal
+    return render_template('index.html', projetos=meus_projetos)
 
-# Página de projetos
-@app.route('/projetos')
-def projetos():
-    return render_template('projetos.html', projetos=meus_projetos)
-
-# Página sobre
-@app.route('/sobre')
-def sobre():
-    return render_template('sobre.html')
-
-# Página de contato (GET para exibir, POST para processar formulário)
-@app.route('/contato', methods=['GET', 'POST'])
-def contato():
-    # As rotas para o email e whatsapp não precisam de processamento de formulário.
-    # Apenas a página de contato com formulário precisaria dessa lógica.
-    return render_template('contato.html')
